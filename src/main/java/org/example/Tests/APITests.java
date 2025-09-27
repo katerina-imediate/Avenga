@@ -4,14 +4,10 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.example.Apis.Book;
 import org.example.Utils.Env;
-import org.example.Utils.Factory;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
-import java.util.Map;
-
 import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.notNullValue;
+
 
 public class APITests {
     private static String requestBody = "{\n" +
@@ -52,19 +48,16 @@ public class APITests {
 
     }
 
-
     @Test
     public void getBookIdTest() {
         Response response = Book.getBookId(5);
         response.then().assertThat().body("id", is(5));
     }
 
-
     @Test
     public void deleteBookTest() {
 
-        Response response = Book.deleteBook(6);
-
+        Response response = Book.deleteBook(609);
         response.then().assertThat().statusCode(200);
     }
 }
