@@ -30,7 +30,6 @@ jobs:
           echo "Maven version:"
           mvn -version
 
-      - name: Build and Run REST Assured Tests with Maven
       - run: mvn clean test
 
       - name: Archive REST-Assured results
@@ -38,7 +37,7 @@ jobs:
         with:
           name: REST-Assured-results
           path: target/surefire-reports
-          uses: actions/upload-artifact@v3
+
 
 
 
