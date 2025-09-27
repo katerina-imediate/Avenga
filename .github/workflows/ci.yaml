@@ -38,11 +38,7 @@ jobs:
           name: REST-Assured-results
           path: target/surefire-reports/Tests
 
-      - name: Upload REST-Assured results to GitHub
-        uses: actions/upload-artifact@v4
-        with:
-            name: REST-Assured-results
-            path: target/surefire-reports/Tests
+
 
 
 
