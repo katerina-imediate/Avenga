@@ -6,6 +6,8 @@ import org.example.Apis.Book;
 import org.example.Utils.Env;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
+import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 
 
@@ -45,7 +47,6 @@ public class APITests {
         Response response = Book.postBook(putRequest);
         response.then().assertThat().statusCode(200);
         response.then().assertThat().body("url", is("updated_id_katerina"), "id", is(6), "idBook", is(6));
-
     }
 
     @Test
