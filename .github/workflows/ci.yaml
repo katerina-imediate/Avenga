@@ -33,13 +33,13 @@ jobs:
       - run: mvn clean test
 
       - name: Archive REST-Assured results
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: REST-Assured-results
           path: build/reports/tests/test
 
       - name: Upload REST-Assured results to GitHub
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
             name: REST-Assured-results
             path: build/reports/tests/test
