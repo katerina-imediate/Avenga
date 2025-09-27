@@ -1,8 +1,6 @@
 package org.example.Apis;
 
 
-import java.util.Map;
-
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -10,8 +8,6 @@ import io.restassured.response.Response;
 public class Book {
 
     private static String GET_BOOKS_ENDPOINT = "CoverPhotos/";
-
-
 
     public static Response getBooks() {
         return RestAssured

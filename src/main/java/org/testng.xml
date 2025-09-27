@@ -3,7 +3,6 @@
 <suite name="Tests">
     <test name="Regression">
         <classes>
-<!--            <class name="org.example.Tests.UITests"/>-->
             <class name="org.example.Tests.APITests"/>
         </classes>
     </test>
