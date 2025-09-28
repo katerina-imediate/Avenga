@@ -5,60 +5,60 @@ import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
-public class Book {
+public class Author {
 
-    private static String GET_BOOKS_ENDPOINT = "Books/";
+    private static String GET_AUTHORS_ENDPOINT = "Authors/";
 
-    public static Response getBooks() {
+    public static Response getAuthors() {
         return RestAssured
                 .given()
                 .contentType(ContentType.JSON)
                 .when()
-                .get(GET_BOOKS_ENDPOINT);
+                .get(GET_AUTHORS_ENDPOINT);
     }
 
-
-    public static Response postBook(String requestBody) {
-        return RestAssured
-                .given()
-                .contentType(ContentType.JSON)
-                .body(requestBody)
-                .when()
-                .post(GET_BOOKS_ENDPOINT);
-    }
-
-
-    public static Response getBookId(Integer id) {
+    public static Response getAuthorsBooks(Integer id) {
         return RestAssured
                 .given()
                 .contentType(ContentType.JSON)
                 .when()
-                .get(GET_BOOKS_ENDPOINT + id);
+                .get(GET_AUTHORS_ENDPOINT + id);
     }
-
-    public static Response putBook(String requestBody, Integer id) {
+    public static Response postAuthor(String requestBody) {
         return RestAssured
                 .given()
                 .contentType(ContentType.JSON)
                 .body(requestBody)
                 .when()
-                .put(GET_BOOKS_ENDPOINT + id);
+                .post(GET_AUTHORS_ENDPOINT);
     }
 
-    public static Response invalidPutBook(String requestBody) {
+
+    public static Response getAuthorId(Integer id) {
+        return RestAssured
+                .given()
+                .contentType(ContentType.JSON)
+                .when()
+                .get(GET_AUTHORS_ENDPOINT + id);
+    }
+
+    public static Response putAuthor(String requestBody) {
         return RestAssured
                 .given()
                 .contentType(ContentType.JSON)
                 .body(requestBody)
                 .when()
-                .put(GET_BOOKS_ENDPOINT);
+                .put(GET_AUTHORS_ENDPOINT);
     }
 
-    public static Response deleteBook(Integer id) {
+
+    public static Response deleteAuhtor(Integer id) {
         return RestAssured
                 .given()
                 .contentType(ContentType.JSON)
                 .when()
-                .delete(GET_BOOKS_ENDPOINT + id);
+                .delete(GET_AUTHORS_ENDPOINT + id);
     }
+
+
 }

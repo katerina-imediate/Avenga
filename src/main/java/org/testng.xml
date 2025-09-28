@@ -3,7 +3,7 @@
 <suite name="Tests">
     <test name="Regression">
         <classes>
-            <class name="org.example.Tests.APITests"/>
+            <class name="org.example.Tests.API_Book_Tests"/>
         </classes>
     </test>
 </suite>

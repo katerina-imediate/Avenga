@@ -9,8 +9,5 @@
         <module name="RestAssured_Webdriver" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="RestAssured_Webdriver" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>
