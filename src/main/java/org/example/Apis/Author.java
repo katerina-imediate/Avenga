@@ -8,6 +8,8 @@ import io.restassured.response.Response;
 public class Author {
 
     private static String GET_AUTHORS_ENDPOINT = "Authors/";
+    private static String GET_AUTHORS_BOOKS_ENDPOINT = "Authors/authors/books/";
+
 
     public static Response getAuthors() {
         return RestAssured
@@ -22,7 +24,7 @@ public class Author {
                 .given()
                 .contentType(ContentType.JSON)
                 .when()
-                .get(GET_AUTHORS_ENDPOINT + id);
+                .get(GET_AUTHORS_BOOKS_ENDPOINT + id);
     }
     public static Response postAuthor(String requestBody) {
         return RestAssured
@@ -42,13 +44,13 @@ public class Author {
                 .get(GET_AUTHORS_ENDPOINT + id);
     }
 
-    public static Response putAuthor(String requestBody) {
+    public static Response putAuthor(String requestBody, Integer id) {
         return RestAssured
                 .given()
                 .contentType(ContentType.JSON)
                 .body(requestBody)
                 .when()
-                .put(GET_AUTHORS_ENDPOINT);
+                .put(GET_AUTHORS_ENDPOINT + id);
     }
 
 
@@ -60,5 +62,12 @@ public class Author {
                 .delete(GET_AUTHORS_ENDPOINT + id);
     }
 
-
+    public static Response invalidPutAuthors(String requestBody) {
+        return RestAssured
+                .given()
+                .contentType(ContentType.JSON)
+                .body(requestBody)
+                .when()
+                .put(GET_AUTHORS_ENDPOINT);
+    }
 }
